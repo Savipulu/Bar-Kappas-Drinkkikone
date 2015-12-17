@@ -1,2 +1,2 @@
 # Bar-Kappas-Drinkkikone
-Ohjelmoinnin harjoitustyö
+ Ohjelmoinnin harjoitustyö
