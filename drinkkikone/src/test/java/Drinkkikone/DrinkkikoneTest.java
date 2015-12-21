@@ -14,7 +14,7 @@ import static org.junit.Assert.*;
 public class DrinkkikoneTest {
     private Drinkkikone drinkkikone;
     private Baarikaappi baarikaappi;
-    private Reseptikirja Reseptikirja;
+    private Reseptikirja reseptikirja;
     
     public DrinkkikoneTest() {
     }
@@ -29,12 +29,22 @@ public class DrinkkikoneTest {
     
     @Before
     public void setUp() {
-        drinkkikone =  new Drinkkikone(new Baarikaappi(), new Reseptikirja());
+        baarikaappi = new Baarikaappi();
+        reseptikirja = new Reseptikirja();
+        drinkkikone = new Drinkkikone(baarikaappi, reseptikirja);
     }
     
     @After
     public void tearDown() {
     }
     
+    @Test
+    public void konstruktoriAsettaaBaarikaapin() {
+        assertNotEquals(null, drinkkikone.getBaarikaappi());
+    }
     
+    @Test
+    public void konstruktoriAsettaaReseptikirjan() {
+        assertNotEquals(null, drinkkikone.getReseptikirja());
+    }
 }

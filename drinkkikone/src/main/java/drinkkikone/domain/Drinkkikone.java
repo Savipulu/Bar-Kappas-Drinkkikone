@@ -9,4 +9,12 @@ public class Drinkkikone {
         this.baarikaappi = baarikaappi;
         this.reseptikirja = reseptikirja;
     }
+    
+    public Baarikaappi getBaarikaappi() {
+        return this.baarikaappi;
+    }
+    
+    public Reseptikirja getReseptikirja() {
+        return this.reseptikirja;
+    }
 }

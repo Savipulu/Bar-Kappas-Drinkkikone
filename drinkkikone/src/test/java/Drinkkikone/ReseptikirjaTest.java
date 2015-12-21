@@ -40,4 +40,9 @@ public class ReseptikirjaTest {
     public void reseptienListaEiOleNull() {
         assertNotEquals(null, reseptikirja.getReseptit());
     }
+    
+    @Test
+    public void reseptienListaAluksiTyhja() {
+        assertEquals(0, reseptikirja.getReseptit().size());
+    }
 }

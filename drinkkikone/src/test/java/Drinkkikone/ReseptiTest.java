@@ -37,4 +37,9 @@ public class ReseptiTest {
     public void AinesosienListaEiOleNull() {
         assertNotEquals(null, resepti.getAinesosat());
     }
+    
+    @Test
+    public void AinesosienListaAluksiTyhja() {
+        assertEquals(0, resepti.getAinesosat().size());
+    }
 }
