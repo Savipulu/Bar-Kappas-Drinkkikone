@@ -1,9 +1,7 @@
 
 package Drinkkikone;
 
-import drinkkikone.domain.Baarikaappi;
-import drinkkikone.domain.Drinkkikone;
-import drinkkikone.domain.Reseptikirja;
+import drinkkikone.domain.Resepti;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -11,12 +9,11 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class DrinkkikoneTest {
-    private Drinkkikone drinkkikone;
-    private Baarikaappi baarikaappi;
-    private Reseptikirja Reseptikirja;
+public class ReseptiTest {
     
-    public DrinkkikoneTest() {
+    private Resepti resepti;
+    
+    public ReseptiTest() {
     }
     
     @BeforeClass
@@ -29,12 +26,15 @@ public class DrinkkikoneTest {
     
     @Before
     public void setUp() {
-        drinkkikone =  new Drinkkikone(new Baarikaappi(), new Reseptikirja());
+        resepti = new Resepti("Karpalobooli");
     }
     
     @After
     public void tearDown() {
     }
-    
-    
+
+    @Test
+    public void AinesosienListaEiOleNull() {
+        assertNotEquals(null, resepti.getAinesosat());
+    }
 }

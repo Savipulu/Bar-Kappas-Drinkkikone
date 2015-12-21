@@ -1,14 +1,20 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package drinkkikone.domain;
 
-/**
- *
- * @author jwinter
- */
 public class Ainesosa {
+    private String nimi;
+    private double alkoholipitoisuus;
     
+    public Ainesosa(String nimi, double alkoholipitoisuus) {
+        this.nimi = nimi;
+        this.alkoholipitoisuus = alkoholipitoisuus;
+    }
+    
+    public String getNimi() {
+        return this.nimi;
+    }
+    
+    public double getAlkoholipitoisuus() {
+        return this.alkoholipitoisuus;
+    }
 }

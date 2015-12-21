@@ -1,8 +1,10 @@
-
+/*
+ * To change this license header, choose License Headers in Project Properties.
+ * To change this template file, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package Drinkkikone;
 
-import drinkkikone.domain.Baarikaappi;
-import drinkkikone.domain.Drinkkikone;
 import drinkkikone.domain.Reseptikirja;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -11,12 +13,10 @@ import org.junit.BeforeClass;
 import org.junit.Test;
 import static org.junit.Assert.*;
 
-public class DrinkkikoneTest {
-    private Drinkkikone drinkkikone;
-    private Baarikaappi baarikaappi;
-    private Reseptikirja Reseptikirja;
+public class ReseptikirjaTest {
+    private Reseptikirja reseptikirja;
     
-    public DrinkkikoneTest() {
+    public ReseptikirjaTest() {
     }
     
     @BeforeClass
@@ -29,12 +29,15 @@ public class DrinkkikoneTest {
     
     @Before
     public void setUp() {
-        drinkkikone =  new Drinkkikone(new Baarikaappi(), new Reseptikirja());
+        reseptikirja = new Reseptikirja();
     }
     
     @After
     public void tearDown() {
     }
     
-    
+    @Test
+    public void reseptienListaEiOleNull() {
+        assertNotEquals(null, reseptikirja.getReseptit());
+    }
 }
