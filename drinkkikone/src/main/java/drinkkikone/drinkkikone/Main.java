@@ -12,7 +12,5 @@ public class Main {
         Baarikaappi baarikaappi = new Baarikaappi();
         Reseptikirja reseptikirja = new Reseptikirja();
         Drinkkikone drinkkikone = new Drinkkikone(baarikaappi, reseptikirja);
-        Resepti r = new Resepti("resepti");
-        System.out.println(r.getAinesosat());
     }
 }
