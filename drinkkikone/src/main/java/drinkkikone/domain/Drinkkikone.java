@@ -25,4 +25,10 @@ public class Drinkkikone {
     public String kaikkiReseptit() {
         return this.reseptikirja.kaikkiReseptit();
     }
+    
+    public Resepti satunnainenDrinkki() {
+        return null;
+    }
+    
+    
 }

@@ -3,6 +3,7 @@ package drinkkikone.tests;
 
 import drinkkikone.domain.Ainesosa;
 import drinkkikone.domain.Resepti;
+import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -27,7 +28,11 @@ public class ReseptiTest {
     
     @Before
     public void setUp() {
-        resepti = new Resepti("Karpalobooli");
+        HashMap ainesosat = new HashMap<Ainesosa, Integer>();
+        ainesosat.put(new Ainesosa("Vermutti", 20), 6);
+        ainesosat.put(new Ainesosa("Gin", 15), 1);
+        resepti = new Resepti("Gin & Tonic", ainesosat);
+        
     }
     
     @After
@@ -35,19 +40,24 @@ public class ReseptiTest {
     }
 
     @Test
-    public void ainesosienListaEiOleNull() {
-        assertNotEquals(null, resepti.getAinesosat());
+    public void getAinesosatPalauttaaListan() {
+        
     }
     
     @Test
     public void ainesosienListaAluksiTyhja() {
-        assertEquals(0, resepti.getAinesosat().size());
+        assertEquals(2, resepti.getAinesosat().size());
     }
     
     @Test
     public void ainesosienLisaysOnnistuu() {
         Ainesosa a = new Ainesosa("Alkoholi", 100);
         resepti.lisaaAinesosa(a, 100);
-        assertEquals(1, resepti.getAinesosat().size());
+        assertEquals(3, resepti.getAinesosat().size());
+    }
+    
+    @Test
+    public void toStringToimiiOikein() {
+        assertEquals("Gin & Tonic: \n  Vermutti: 6 cl, \n  Gin: 1 cl", resepti.toString());
     }
 }

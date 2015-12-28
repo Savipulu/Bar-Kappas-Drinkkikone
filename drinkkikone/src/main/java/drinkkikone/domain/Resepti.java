@@ -1,7 +1,9 @@
 
 package drinkkikone.domain;
 
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 public class Resepti {
@@ -18,8 +20,10 @@ public class Resepti {
         this.ainesosat.putAll(ainesosat);
     }
     
-    public Map<Ainesosa, Integer> getAinesosat() {
-        return this.ainesosat;
+    public List<Ainesosa> getAinesosat() {
+        ArrayList<Ainesosa> ainesosat = new ArrayList<>();
+        ainesosat.addAll(this.ainesosat.keySet());
+        return ainesosat;
     }
     
     public void lisaaAinesosa(Ainesosa ainesosa, int maara) {
@@ -28,9 +32,14 @@ public class Resepti {
     
     public String toString() {
         String resepti = this.nimi + ": \n";
+        int i = 0;
         
         for (Ainesosa ainesosa : this.ainesosat.keySet()) {
-            resepti += ainesosa.toString() + ": " + this.ainesosat.get(ainesosa) + " cl";
+            resepti += "  " + ainesosa.toString() + ": " + this.ainesosat.get(ainesosa) + " cl";
+            if (i != (this.ainesosat.keySet().size() - 1)) {
+                resepti += ", \n";
+            }
+            i++;
         }
         
         return resepti;

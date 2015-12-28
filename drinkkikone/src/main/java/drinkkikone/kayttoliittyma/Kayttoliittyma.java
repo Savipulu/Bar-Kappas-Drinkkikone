@@ -22,9 +22,9 @@ public class Kayttoliittyma {
             if (komento.equals("1")) {
                 //drinkkikone.naytaValmistettavatDrinkit();
             } else if (komento.equals("2")) {
-                //drinkkikone.satunnainenDrinkki();
+                System.out.println(drinkkikone.satunnainenDrinkki());
             } else if (komento.equals("3")) {
-                drinkkikone.kaikkiReseptit();
+                System.out.println(drinkkikone.kaikkiReseptit());
             } else if (komento.equals("x")) {
                 break;
             } else {

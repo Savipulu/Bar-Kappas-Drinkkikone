@@ -1,10 +1,12 @@
 
 package drinkkikone.tests;
 
+import drinkkikone.domain.Ainesosa;
 import drinkkikone.domain.Baarikaappi;
 import drinkkikone.domain.Drinkkikone;
 import drinkkikone.domain.Resepti;
 import drinkkikone.domain.Reseptikirja;
+import java.util.HashMap;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -34,7 +36,11 @@ public class DrinkkikoneTest {
         baarikaappi = new Baarikaappi();
         reseptikirja = new Reseptikirja();
         drinkkikone = new Drinkkikone(baarikaappi, reseptikirja);
-        resepti1 = new Resepti("Cuba Libre");
+        
+        HashMap<Ainesosa, Integer> ainesosat = new HashMap<>();
+        ainesosat.put(new Ainesosa("Rommi", 25), 2);
+        ainesosat.put(new Ainesosa("Coca-cola", 0), 2);
+        resepti1 = new Resepti("Cuba Libre", ainesosat);
     }
     
     @After
@@ -61,5 +67,10 @@ public class DrinkkikoneTest {
     public void reseptienTulostaminenToimii() {
         drinkkikone.lisaaResepti(resepti1);
         assertEquals(resepti1.toString(), reseptikirja.toString());
+    }
+    
+    @Test
+    public void drinkkikoneEiPalautaDrinkkejaJosBaarikaappiOnTyhja() {
+        //to-do
     }
 }
