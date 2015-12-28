@@ -24,5 +24,7 @@ public class Ainesosa {
         return this.maara;
     }
     
-    
+    public String toString() {
+        return this.nimi + ": " + this.maara + " cl";
+    }
 }

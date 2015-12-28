@@ -55,4 +55,9 @@ public class DrinkkikoneTest {
         drinkkikone.lisaaResepti(r);
         assertEquals(1, drinkkikone.getReseptikirja().getReseptit().size());
     }
+    
+    @Test
+    public void reseptienTulostaminenToimii() {
+        
+    }
 }

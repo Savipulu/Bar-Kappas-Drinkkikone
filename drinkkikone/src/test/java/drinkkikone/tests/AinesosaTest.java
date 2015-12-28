@@ -50,6 +50,6 @@ public class AinesosaTest {
     
     @Test
     public void toStringToimiiOikein() {
-        assertEquals("", ainesosa.toString());
+        assertEquals("Karpalolikööri: 100.0 cl", ainesosa.toString());
     }
 }

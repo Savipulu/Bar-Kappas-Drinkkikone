@@ -5,6 +5,7 @@
  */
 package drinkkikone.tests;
 
+import drinkkikone.domain.Resepti;
 import drinkkikone.domain.Reseptikirja;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -15,6 +16,7 @@ import static org.junit.Assert.*;
 
 public class ReseptikirjaTest {
     private Reseptikirja reseptikirja;
+    private Resepti resepti1;
     
     public ReseptikirjaTest() {
     }
@@ -30,6 +32,7 @@ public class ReseptikirjaTest {
     @Before
     public void setUp() {
         reseptikirja = new Reseptikirja();
+        resepti1 = new Resepti("Cuba Libre");
     }
     
     @After
@@ -44,5 +47,17 @@ public class ReseptikirjaTest {
     @Test
     public void reseptienListaAluksiTyhja() {
         assertEquals(0, reseptikirja.getReseptit().size());
+    }
+    
+    @Test
+    public void reseptinLisaysLisaaReseptin() {
+        reseptikirja.lisaaResepti(resepti1);
+        assertEquals(1, reseptikirja.getReseptit().size());
+    }
+    
+    @Test
+    public void reseptienTulostaminenToimii() {
+        reseptikirja.lisaaResepti(resepti1);
+        assertEquals(resepti1.toString(), reseptikirja.toString());
     }
 }

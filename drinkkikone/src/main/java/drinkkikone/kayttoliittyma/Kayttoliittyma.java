@@ -24,7 +24,7 @@ public class Kayttoliittyma {
             } else if (komento.equals("2")) {
                 //drinkkikone.satunnainenDrinkki();
             } else if (komento.equals("3")) {
-                //drinkkikone.kaikkiReseptit();
+                drinkkikone.kaikkiReseptit();
             } else if (komento.equals("x")) {
                 break;
             } else {

@@ -18,4 +18,18 @@ public class Reseptikirja {
     public void lisaaResepti(Resepti r) {
         this.reseptit.add(r);
     }
+    
+    public void tulostaReseptit() {
+        for (Resepti resepti : reseptit) {
+            System.out.println(resepti);
+        }
+    }
+    
+    public String toString() {
+        String toString = "";
+        for (Resepti resepti : reseptit) {
+            toString += resepti.toString();
+        }
+        return toString;
+    }
 }

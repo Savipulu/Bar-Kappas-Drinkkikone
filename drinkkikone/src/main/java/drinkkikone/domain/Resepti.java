@@ -31,9 +31,9 @@ public class Resepti {
         String resepti = this.nimi + ": \n";
         
         for (Ainesosa ainesosa : ainesosat) {
-            resepti += "  " + ainesosa.getNimi();
+            resepti += "  " + ainesosa.getNimi() + ": " + ainesosa.getMaara() + " cl";
         }
         
-        return this.nimi;
+        return resepti;
     }
 }

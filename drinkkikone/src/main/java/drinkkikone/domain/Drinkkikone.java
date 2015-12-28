@@ -22,7 +22,7 @@ public class Drinkkikone {
         this.reseptikirja.lisaaResepti(r);
     }
     
-    public void tulostaReseptit() {
-        
+    public void kaikkiReseptit() {
+        this.reseptikirja.tulostaReseptit();
     }
 }
