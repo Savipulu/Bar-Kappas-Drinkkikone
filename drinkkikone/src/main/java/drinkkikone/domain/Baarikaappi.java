@@ -1,8 +1,13 @@
 
 package drinkkikone.domain;
 
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Baarikaappi {
-    private List<Ainesosa> ainesosat;
+    private Map<Ainesosa, Integer> ainesosat;
+    
+    public Baarikaappi() {
+        this.ainesosat = new HashMap<>();
+    }
 }

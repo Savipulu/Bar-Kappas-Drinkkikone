@@ -16,6 +16,7 @@ public class DrinkkikoneTest {
     private Drinkkikone drinkkikone;
     private Baarikaappi baarikaappi;
     private Reseptikirja reseptikirja;
+    private Resepti resepti1;
     
     public DrinkkikoneTest() {
     }
@@ -33,6 +34,7 @@ public class DrinkkikoneTest {
         baarikaappi = new Baarikaappi();
         reseptikirja = new Reseptikirja();
         drinkkikone = new Drinkkikone(baarikaappi, reseptikirja);
+        resepti1 = new Resepti("Cuba Libre");
     }
     
     @After
@@ -51,13 +53,13 @@ public class DrinkkikoneTest {
     
     @Test
     public void reseptinLisaysLisaaReseptin() {
-        Resepti r = new Resepti("Cuba Libre");
-        drinkkikone.lisaaResepti(r);
+        drinkkikone.lisaaResepti(resepti1);
         assertEquals(1, drinkkikone.getReseptikirja().getReseptit().size());
     }
     
     @Test
     public void reseptienTulostaminenToimii() {
-        
+        drinkkikone.lisaaResepti(resepti1);
+        assertEquals(resepti1.toString(), reseptikirja.toString());
     }
 }

@@ -46,8 +46,8 @@ public class ReseptiTest {
     
     @Test
     public void ainesosienLisaysOnnistuu() {
-        Ainesosa a = new Ainesosa("Alkoholi", 100, 100);
-        resepti.lisaaAinesosa(a);
+        Ainesosa a = new Ainesosa("Alkoholi", 100);
+        resepti.lisaaAinesosa(a, 100);
         assertEquals(1, resepti.getAinesosat().size());
     }
 }

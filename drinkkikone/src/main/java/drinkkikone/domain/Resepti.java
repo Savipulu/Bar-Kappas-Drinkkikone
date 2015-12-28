@@ -1,37 +1,36 @@
 
 package drinkkikone.domain;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashMap;
+import java.util.Map;
 
 public class Resepti {
     private String nimi;
-    private List<Ainesosa> ainesosat;
+    private Map<Ainesosa, Integer> ainesosat;
     
     public Resepti(String nimi) {
         this.nimi = nimi;
-        this.ainesosat = new ArrayList<>();
+        this.ainesosat = new HashMap<>();
     }
     
-    public Resepti(String nimi, List<Ainesosa> ainesosat) {
-        this.nimi = nimi;
-        this.ainesosat = new ArrayList<>();
-        this.ainesosat.addAll(ainesosat);
+    public Resepti(String nimi, Map<Ainesosa, Integer> ainesosat) {
+        this(nimi);
+        this.ainesosat.putAll(ainesosat);
     }
     
-    public List<Ainesosa> getAinesosat() {
+    public Map<Ainesosa, Integer> getAinesosat() {
         return this.ainesosat;
     }
     
-    public void lisaaAinesosa(Ainesosa ainesosa) {
-        this.ainesosat.add(ainesosa);
+    public void lisaaAinesosa(Ainesosa ainesosa, int maara) {
+        this.ainesosat.put(ainesosa, maara);
     }
     
     public String toString() {
         String resepti = this.nimi + ": \n";
         
-        for (Ainesosa ainesosa : ainesosat) {
-            resepti += "  " + ainesosa.getNimi() + ": " + ainesosa.getMaara() + " cl";
+        for (Ainesosa ainesosa : this.ainesosat.keySet()) {
+            resepti += ainesosa.toString() + ": " + this.ainesosat.get(ainesosa) + " cl";
         }
         
         return resepti;

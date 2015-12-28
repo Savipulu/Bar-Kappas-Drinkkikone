@@ -4,12 +4,10 @@ package drinkkikone.domain;
 public class Ainesosa {
     private String nimi;
     private double alkoholipitoisuus;
-    private double maara;
     
-    public Ainesosa(String nimi, double alkoholipitoisuus, double maara) {
+    public Ainesosa(String nimi, double alkoholipitoisuus) {
         this.nimi = nimi;
         this.alkoholipitoisuus = alkoholipitoisuus;
-        this.maara = maara;
     }
     
     public String getNimi() {
@@ -20,11 +18,7 @@ public class Ainesosa {
         return this.alkoholipitoisuus;
     }
     
-    public double getMaara() {
-        return this.maara;
-    }
-    
     public String toString() {
-        return this.nimi + ": " + this.maara + " cl";
+        return this.nimi;
     }
 }

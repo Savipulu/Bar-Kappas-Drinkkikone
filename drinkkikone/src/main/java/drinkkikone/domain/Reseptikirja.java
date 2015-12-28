@@ -19,10 +19,12 @@ public class Reseptikirja {
         this.reseptit.add(r);
     }
     
-    public void tulostaReseptit() {
+    public String kaikkiReseptit() {
+        String kaikki = "";
         for (Resepti resepti : reseptit) {
-            System.out.println(resepti);
+            kaikki += resepti.toString() + "\n";
         }
+        return kaikki;
     }
     
     public String toString() {
