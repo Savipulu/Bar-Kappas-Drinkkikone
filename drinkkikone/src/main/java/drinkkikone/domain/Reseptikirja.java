@@ -14,4 +14,8 @@ public class Reseptikirja {
     public List<Resepti> getReseptit() {
         return this.reseptit;
     }
+    
+    public void lisaaResepti(Resepti r) {
+        this.reseptit.add(r);
+    }
 }

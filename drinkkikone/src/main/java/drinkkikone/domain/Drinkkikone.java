@@ -17,4 +17,12 @@ public class Drinkkikone {
     public Reseptikirja getReseptikirja() {
         return this.reseptikirja;
     }
+    
+    public void lisaaResepti(Resepti r) {
+        this.reseptikirja.lisaaResepti(r);
+    }
+    
+    public void tulostaReseptit() {
+        
+    }
 }

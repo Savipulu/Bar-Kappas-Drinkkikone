@@ -1,5 +1,5 @@
 
-package Drinkkikone;
+package drinkkikone.tests;
 
 import org.junit.After;
 import org.junit.AfterClass;
@@ -26,7 +26,7 @@ public class AinesosaTest {
     
     @Before
     public void setUp() {
-        ainesosa = new Ainesosa("Karpalolikööri", 22.0);
+        ainesosa = new Ainesosa("Karpalolikööri", 22.0, 100);
     }
     
     @After
@@ -41,5 +41,15 @@ public class AinesosaTest {
     @Test
     public void konstruktoriAsettaaAlkoholipitoisuudenOikein() {
         assertEquals(22.0, ainesosa.getAlkoholipitoisuus(), 0.0001);
+    }
+    
+    @Test
+    public void konstruktoriAsettaaMaaranOikein() {
+        assertEquals(100, ainesosa.getMaara(), 0.0001);
+    }
+    
+    @Test
+    public void toStringToimiiOikein() {
+        assertEquals("", ainesosa.toString());
     }
 }

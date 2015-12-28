@@ -1,8 +1,9 @@
 
-package Drinkkikone;
+package drinkkikone.tests;
 
 import drinkkikone.domain.Baarikaappi;
 import drinkkikone.domain.Drinkkikone;
+import drinkkikone.domain.Resepti;
 import drinkkikone.domain.Reseptikirja;
 import org.junit.After;
 import org.junit.AfterClass;
@@ -46,5 +47,12 @@ public class DrinkkikoneTest {
     @Test
     public void konstruktoriAsettaaReseptikirjan() {
         assertNotEquals(null, drinkkikone.getReseptikirja());
+    }
+    
+    @Test
+    public void reseptinLisaysLisaaReseptin() {
+        Resepti r = new Resepti("Cuba Libre");
+        drinkkikone.lisaaResepti(r);
+        assertEquals(1, drinkkikone.getReseptikirja().getReseptit().size());
     }
 }

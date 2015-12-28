@@ -22,4 +22,18 @@ public class Resepti {
     public List<Ainesosa> getAinesosat() {
         return this.ainesosat;
     }
+    
+    public void lisaaAinesosa(Ainesosa ainesosa) {
+        this.ainesosat.add(ainesosa);
+    }
+    
+    public String toString() {
+        String resepti = this.nimi + ": \n";
+        
+        for (Ainesosa ainesosa : ainesosat) {
+            resepti += "  " + ainesosa.getNimi();
+        }
+        
+        return this.nimi;
+    }
 }
