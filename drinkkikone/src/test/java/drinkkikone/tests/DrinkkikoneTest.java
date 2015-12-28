@@ -6,7 +6,10 @@ import drinkkikone.domain.Baarikaappi;
 import drinkkikone.domain.Drinkkikone;
 import drinkkikone.domain.Resepti;
 import drinkkikone.domain.Reseptikirja;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -19,6 +22,8 @@ public class DrinkkikoneTest {
     private Baarikaappi baarikaappi;
     private Reseptikirja reseptikirja;
     private Resepti resepti1;
+    private List<Ainesosa> ainesosat;
+    private Map<Ainesosa, Integer> ainesosatMap;
     
     public DrinkkikoneTest() {
     }
@@ -37,10 +42,16 @@ public class DrinkkikoneTest {
         reseptikirja = new Reseptikirja();
         drinkkikone = new Drinkkikone(baarikaappi, reseptikirja);
         
-        HashMap<Ainesosa, Integer> ainesosat = new HashMap<>();
-        ainesosat.put(new Ainesosa("Rommi", 25), 2);
-        ainesosat.put(new Ainesosa("Coca-cola", 0), 2);
-        resepti1 = new Resepti("Cuba Libre", ainesosat);
+        ainesosat = new ArrayList<>();
+        ainesosat.add(new Ainesosa("Rommi", 25));
+        ainesosat.add(new Ainesosa("Coca-Cola", 0));
+        
+        ainesosatMap = new HashMap<>();
+        for (Ainesosa ainesosa : ainesosat) {
+            ainesosatMap.put(ainesosa, 2);
+        }
+        
+        resepti1 = new Resepti("Cuba Libre", ainesosatMap);
     }
     
     @After
@@ -71,6 +82,13 @@ public class DrinkkikoneTest {
     
     @Test
     public void drinkkikoneEiPalautaDrinkkejaJosBaarikaappiOnTyhja() {
-        //to-do
+        assertEquals(null, this.drinkkikone.satunnainenDrinkki());
     }
+    
+//    @Test
+//    public void drinkkikonePalauttaaDrinkinJosSeOnMahdollista() {
+//        drinkkikone.lisaaResepti(resepti1);
+//        this.baarikaappi.lisaaUseaAinesosa(ainesosatMap);
+//        assertNotEquals(null, this.drinkkikone.satunnainenDrinkki());
+//    }
 }

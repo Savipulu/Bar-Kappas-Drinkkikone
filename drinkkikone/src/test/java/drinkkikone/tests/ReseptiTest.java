@@ -29,7 +29,7 @@ public class ReseptiTest {
     @Before
     public void setUp() {
         HashMap ainesosat = new HashMap<Ainesosa, Integer>();
-        ainesosat.put(new Ainesosa("Vermutti", 20), 6);
+        ainesosat.put(new Ainesosa("Vermutti", 15), 6);
         ainesosat.put(new Ainesosa("Gin", 15), 1);
         resepti = new Resepti("Gin & Tonic", ainesosat);
         

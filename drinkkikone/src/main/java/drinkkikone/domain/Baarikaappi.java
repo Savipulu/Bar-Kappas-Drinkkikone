@@ -18,4 +18,19 @@ public class Baarikaappi {
         ainesosat.addAll(this.ainesosat.keySet());
         return ainesosat;
     }
+    
+    public boolean onTyhja() {
+        if (this.ainesosat.keySet().size() == 0) {
+            return true;
+        }
+        return false;
+    }
+    
+    public void lisaaAinesosa(Ainesosa a, int maara) {
+        this.ainesosat.put(a, maara);
+    }
+    
+    public void lisaaUseaAinesosa(Map<Ainesosa, Integer> ainesosat) {
+        this.ainesosat.putAll(ainesosat);
+    }
 }
