@@ -23,7 +23,7 @@ public class DrinkkikoneTest {
     private Reseptikirja reseptikirja;
     private Resepti resepti1;
     private List<Ainesosa> ainesosat;
-    private Map<Ainesosa, Integer> ainesosatMap;
+    private Map<Ainesosa, Double> ainesosatMap;
     
     public DrinkkikoneTest() {
     }
@@ -43,12 +43,12 @@ public class DrinkkikoneTest {
         drinkkikone = new Drinkkikone(baarikaappi, reseptikirja);
         
         ainesosat = new ArrayList<>();
-        ainesosat.add(new Ainesosa("Rommi", 25));
-        ainesosat.add(new Ainesosa("Coca-Cola", 0));
+        ainesosat.add(new Ainesosa("Rommi", 25.0));
+        ainesosat.add(new Ainesosa("Coca-Cola", 0.0));
         
         ainesosatMap = new HashMap<>();
         for (Ainesosa ainesosa : ainesosat) {
-            ainesosatMap.put(ainesosa, 2);
+            ainesosatMap.put(ainesosa, 2.0);
         }
         
         resepti1 = new Resepti("Cuba Libre", ainesosatMap);

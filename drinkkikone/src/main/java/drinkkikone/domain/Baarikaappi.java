@@ -7,16 +7,16 @@ import java.util.List;
 import java.util.Map;
 
 public class Baarikaappi {
-    private Map<Ainesosa, Integer> ainesosat;
+    private Map<Ainesosa, Double> ainesosat;
     
     public Baarikaappi() {
         this.ainesosat = new HashMap<>();
     }
     
     public List<Ainesosa> getBaarikaapinAinesosat() {
-        ArrayList<Ainesosa> ainesosat = new ArrayList();
-        ainesosat.addAll(this.ainesosat.keySet());
-        return ainesosat;
+        ArrayList<Ainesosa> ainekset = new ArrayList();
+        ainekset.addAll(this.ainesosat.keySet());
+        return ainekset;
     }
     
     public boolean onTyhja() {
@@ -26,11 +26,11 @@ public class Baarikaappi {
         return false;
     }
     
-    public void lisaaAinesosa(Ainesosa a, int maara) {
+    public void lisaaAinesosa(Ainesosa a, double maara) {
         this.ainesosat.put(a, maara);
     }
     
-    public void lisaaUseaAinesosa(Map<Ainesosa, Integer> ainesosat) {
+    public void lisaaUseaAinesosa(Map<Ainesosa, Double> ainesosat) {
         this.ainesosat.putAll(ainesosat);
     }
 }

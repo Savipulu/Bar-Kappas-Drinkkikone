@@ -14,6 +14,7 @@ import static org.junit.Assert.*;
 public class ReseptiTest {
     
     private Resepti resepti;
+    private HashMap<Ainesosa, Double> ainesosat;
     
     public ReseptiTest() {
     }
@@ -28,10 +29,10 @@ public class ReseptiTest {
     
     @Before
     public void setUp() {
-        HashMap ainesosat = new HashMap<Ainesosa, Integer>();
-        ainesosat.put(new Ainesosa("Vermutti", 15), 6);
-        ainesosat.put(new Ainesosa("Gin", 15), 1);
-        resepti = new Resepti("Gin & Tonic", ainesosat);
+        ainesosat = new HashMap<>();
+        ainesosat.put(new Ainesosa("Vermutti", 15.0), 6.0);
+        ainesosat.put(new Ainesosa("Gin", 15.0), 1.0);
+        resepti = new Resepti("Gin & Tonic");
         
     }
     
@@ -46,18 +47,25 @@ public class ReseptiTest {
     
     @Test
     public void ainesosienListaAluksiTyhja() {
-        assertEquals(2, resepti.getAinesosat().size());
+        assertEquals(0, resepti.getAinesosat().size());
     }
     
     @Test
     public void ainesosienLisaysOnnistuu() {
-        Ainesosa a = new Ainesosa("Alkoholi", 100);
-        resepti.lisaaAinesosa(a, 100);
-        assertEquals(3, resepti.getAinesosat().size());
+        Ainesosa a = new Ainesosa("Alkoholi", 100.0);
+        resepti.lisaaAinesosa(a, 100.0);
+        assertEquals(1, resepti.getAinesosat().size());
+    }
+    
+    @Test
+    public void ainesosienLisaysOnnistuuHashMapilla() {
+        resepti.lisaaUseaAinesosa(ainesosat);
+        assertEquals(2, resepti.getAinesosat().size());
     }
     
     @Test
     public void toStringToimiiOikein() {
-        assertEquals("Gin & Tonic: \n  Vermutti: 6 cl, \n  Gin: 1 cl", resepti.toString());
+        resepti.lisaaUseaAinesosa(ainesosat);
+        assertEquals("Gin & Tonic: \n  Gin: 1.0 cl, \n  Vermutti: 6.0 cl", resepti.toString());
     }
 }
