@@ -6,3 +6,6 @@ Maanantai 21.12.2015:
 
 Sunnuntai 27.12.2015:
 3 h Testien tekemistä, luokkien metodien luomista ja yksinkertainen käyttöliittymä
+
+Maanantai 28.12.2015:
+4 h Testien tekemistä, luokkakaavion ja käyttöliittymän parantelemista sekä pit-raportin generointi
