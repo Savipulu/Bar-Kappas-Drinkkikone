@@ -41,18 +41,18 @@ public class ReseptikirjaTest {
     
     @Test
     public void reseptienListaEiOleNull() {
-        assertNotEquals(null, reseptikirja.getReseptit());
+        assertNotEquals(null, reseptikirja.getKaikkiReseptit());
     }
     
     @Test
     public void reseptienListaAluksiTyhja() {
-        assertEquals(0, reseptikirja.getReseptit().size());
+        assertEquals(0, reseptikirja.getKaikkiReseptit().size());
     }
     
     @Test
     public void reseptinLisaysLisaaReseptin() {
         reseptikirja.lisaaResepti(resepti1);
-        assertEquals(1, reseptikirja.getReseptit().size());
+        assertEquals(1, reseptikirja.getKaikkiReseptit().size());
     }
     
     @Test

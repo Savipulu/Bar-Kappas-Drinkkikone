@@ -3,6 +3,10 @@ package drinkkikone.domain;
 
 import java.util.Random;
 
+/**
+ * Drinkkikone -luokka hallinnoi sille luotuja baarikaappia ja reseptikirjaa, 
+ * ja huolehtii niiden välisestä yhteistyöstä
+ */
 public class Drinkkikone {
     private Baarikaappi baarikaappi;
     private Reseptikirja reseptikirja;
@@ -31,11 +35,29 @@ public class Drinkkikone {
     }
     
     public Resepti satunnainenDrinkki() {
+        Resepti r = null;
         if (!this.baarikaappi.onTyhja()) {
-            this.reseptikirja.getReseptit().get(random.nextInt(this.reseptikirja.getReseptit().size()));
+            while (true) {
+                int i = random.nextInt(this.reseptikirja.getKaikkiReseptit().size());
+                r = this.reseptikirja.getResepti(i);
+                if (aineksetLoytyy(r)) {
+                    break;
+                }
+            }
         }
-        return null;
+        return r;
     }
     
-    
+    public boolean aineksetLoytyy(Resepti r) {
+        if (this.baarikaappi.getBaarikaapinAinesosat().size() == 0) {
+            return false;
+        }
+        
+        for (Ainesosa ainesosa : r.getAinesosat()) {
+            if (r.getAinesosatJaMaarat().get(ainesosa) < this.baarikaappi.getAinesosanMaaraBaarikaapissa(ainesosa)) {
+                return false;
+            }
+        }
+        return true;
+    }
 }

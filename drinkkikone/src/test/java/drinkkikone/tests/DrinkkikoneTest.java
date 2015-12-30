@@ -71,7 +71,7 @@ public class DrinkkikoneTest {
     @Test
     public void reseptinLisaysLisaaReseptin() {
         drinkkikone.lisaaResepti(resepti1);
-        assertEquals(1, drinkkikone.getReseptikirja().getReseptit().size());
+        assertEquals(1, drinkkikone.getReseptikirja().getKaikkiReseptit().size());
     }
     
     @Test
@@ -81,14 +81,29 @@ public class DrinkkikoneTest {
     }
     
     @Test
+    public void aineksetLoytyyFalseJosAineksiaEiOle() {
+        assertEquals(false, drinkkikone.aineksetLoytyy(resepti1));
+    }
+    
+    @Test
+    public void aineksetLoytyyFalseJosAineksiaEiOleTarpeeksi() {
+        
+    }
+    
+    @Test
+    public void aineksetLoytyyTrueJosAineksetLoytyy() {
+        
+    }
+    
+    @Test
     public void drinkkikoneEiPalautaDrinkkejaJosBaarikaappiOnTyhja() {
         assertEquals(null, this.drinkkikone.satunnainenDrinkki());
     }
     
-//    @Test
-//    public void drinkkikonePalauttaaDrinkinJosSeOnMahdollista() {
-//        drinkkikone.lisaaResepti(resepti1);
-//        this.baarikaappi.lisaaUseaAinesosa(ainesosatMap);
-//        assertNotEquals(null, this.drinkkikone.satunnainenDrinkki());
-//    }
+    @Test
+    public void satunnainenDrinkkiMetodiPalauttaaDrinkinJosSeOnMahdollista() {
+        drinkkikone.lisaaResepti(resepti1);
+        this.baarikaappi.lisaaUseaAinesosa(ainesosatMap);
+        assertNotEquals(null, this.drinkkikone.satunnainenDrinkki());
+    }
 }
