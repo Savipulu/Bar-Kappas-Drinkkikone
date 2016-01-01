@@ -25,6 +25,14 @@ public class Resepti {
         this.ainesosat.putAll(ainesosat);
     }
     
+    public void setValmistusohje(String valmistusohje) {
+        this.valmistusohje = valmistusohje;
+    }
+    
+    public String getValmistusohje() {
+        return this.valmistusohje;
+    }
+    
     public List<Ainesosa> getAinesosat() {
         ArrayList<Ainesosa> ainesosat = new ArrayList<>();
         ainesosat.addAll(this.ainesosat.keySet());
