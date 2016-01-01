@@ -18,7 +18,6 @@ public class Main {
         Drinkkikone drinkkikone = new Drinkkikone(baarikaappi, reseptikirja);
         Scanner lukija = new Scanner(System.in);
         
-        
         HashMap ainesosat = new HashMap<Ainesosa, Integer>();
         ainesosat.put(new Ainesosa("Vermutti", 20), 6);
         ainesosat.put(new Ainesosa("Gin", 15), 1);
