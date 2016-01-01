@@ -12,3 +12,6 @@ Maanantai 28.12.2015:
 
 Keskiviikko 30.12.2015:
 2 h Testejä ja toiminnallisuutta
+
+Perjantai 1.1.2016:
+2 h Testien tekemistä ja JavaDocin kirjoittamista
