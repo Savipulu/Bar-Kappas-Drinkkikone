@@ -1,6 +1,8 @@
 
 package drinkkikone.domain;
 
+import java.util.Objects;
+
 /**
  * Ainesosa -luokka tallettaa ainesosan nimen ja alkoholipitoisuuden (alkoholittomillekin
  * ainesosille merkataan alkoholipitoisuudeksi 0.0)
@@ -22,6 +24,7 @@ public class Ainesosa implements Comparable<Ainesosa>{
         return this.alkoholipitoisuus;
     }
     
+    @Override
     public String toString() {
         return this.nimi;
     }
@@ -48,5 +51,12 @@ public class Ainesosa implements Comparable<Ainesosa>{
         }
         
         return true;
+    }
+
+    @Override
+    public int hashCode() {
+        int hash = 7;
+        hash = 53 * hash + Objects.hashCode(this.nimi);
+        return hash;
     }
 }

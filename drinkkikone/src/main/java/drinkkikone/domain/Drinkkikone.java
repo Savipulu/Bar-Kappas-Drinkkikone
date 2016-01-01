@@ -26,14 +26,30 @@ public class Drinkkikone {
         return this.reseptikirja;
     }
     
+    /**
+     * Metodi lisää drinkkikoneen reseptikirjaan uuden reseptin
+     * 
+     * @param r Lisättävä resepti 
+     */
     public void lisaaResepti(Resepti r) {
         this.reseptikirja.lisaaResepti(r);
     }
     
+    /**
+     * Metodi palauttaa drinkkijonon sisältämät reseptit merkkijonoesityksenä
+     * 
+     * @return Drinkkikoneen reseptien nimet
+     */
     public String kaikkiReseptit() {
         return this.reseptikirja.kaikkiReseptit();
     }
     
+    /**
+     * Metodi palauttaa satunnaisesti valitun drinkin valmistettavissa olevista
+     * drinkeistä
+     * 
+     * @return Satunnainen drinkki
+     */
     public Resepti satunnainenDrinkki() {
         Resepti r = null;
         if (!this.baarikaappi.onTyhja()) {
@@ -48,8 +64,15 @@ public class Drinkkikone {
         return r;
     }
     
+    /**
+     * Metodi tarkistaa yksi ainesosa kerrallaan onko baarikaapissa reseptin 
+     * valmistamiseen tarvittavia ainesosia tarpeeksi
+     * 
+     * @param r Tarkistettava resepti
+     * @return Totuusarvo siitä onko drinkki mahdollinen
+     */
     public boolean aineksetLoytyy(Resepti r) {
-        if (this.baarikaappi.getBaarikaapinAinesosat().size() == 0) {
+        if (this.baarikaappi.getBaarikaapinAinesosienNimet().size() == 0) {
             return false;
         }
         

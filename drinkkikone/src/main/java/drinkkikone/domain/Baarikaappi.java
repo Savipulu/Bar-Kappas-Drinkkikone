@@ -17,7 +17,11 @@ public class Baarikaappi {
         this.ainesosat = new HashMap<>();
     }
     
-    public List<Ainesosa> getBaarikaapinAinesosat() {
+    public Map<Ainesosa, Double> getBaarikaapinSisalto() {
+        return this.ainesosat;
+    }
+    
+    public List<Ainesosa> getBaarikaapinAinesosienNimet() {
         ArrayList<Ainesosa> ainekset = new ArrayList();
         ainekset.addAll(this.ainesosat.keySet());
         return ainekset;
@@ -28,6 +32,11 @@ public class Baarikaappi {
         return 0.0;
     }
     
+    /**
+     * metodi kertoo onko baarikaappi tyhjä
+     * 
+     * @return onko baarikappi tyhjä
+     */
     public boolean onTyhja() {
         if (this.ainesosat.keySet().size() == 0) {
             return true;
@@ -35,11 +44,30 @@ public class Baarikaappi {
         return false;
     }
     
-    public void lisaaAinesosa(Ainesosa a, double maara) {
-        this.ainesosat.put(a, maara);
+    /**
+     * Metodi lisaa baarikaapin hajautustauluun ainesosan ja ainesosan määrän 
+     * baarikaapissa
+     * 
+     * @param ainesosa baarikaappiin lisättävä ainesosa
+     * @param maara ainesosan määrä baarikaapissa
+     */
+    public void lisaaAinesosa(Ainesosa ainesosa, double maara) {
+        if (this.ainesosat.containsKey(ainesosa)) {
+            double alkuperainenMaara = this.ainesosat.get(ainesosa);
+            this.ainesosat.put(ainesosa, (maara + alkuperainenMaara));
+        } else {
+            this.ainesosat.put(ainesosa, maara);
+        }
     }
     
+    /**
+     * Metodi lisaa kokonaisen hajautustaulun sisällön baarikaappiin
+     * 
+     * @param ainesosat baarikaappiin lisättävien ainesosien hajautustaulu
+     */
     public void lisaaUseaAinesosa(Map<Ainesosa, Double> ainesosat) {
-        this.ainesosat.putAll(ainesosat);
+        for (Ainesosa ainesosa : ainesosat.keySet()) {
+            lisaaAinesosa(ainesosa, ainesosat.get(ainesosa));
+        }
     }
 }
