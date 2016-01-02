@@ -15,3 +15,6 @@ Keskiviikko 30.12.2015:
 
 Perjantai 1.1.2016:
 2 h Testien tekemistä ja JavaDocin kirjoittamista
+
+Lauantai 2.1.2016:
+30 min pit raportin luominen + pikkusäätöjä
