@@ -22,7 +22,7 @@ public class Resepti {
     
     public Resepti(String nimi, Map<Ainesosa, Double> ainesosat) {
         this(nimi);
-        this.ainesosat.putAll(ainesosat);
+        lisaaUseaAinesosa(ainesosat);
     }
     
     public void setValmistusohje(String valmistusohje) {
@@ -43,13 +43,26 @@ public class Resepti {
         return this.ainesosat;
     }
     
+    /**
+     * Metodi tallettaa hajautustauluun avaimeksi ainesosan, ja arvopariksi
+     * reseptin valmistamiseen tarvittavan aineosan määrän
+     * 
+     * @param ainesosa Lisättävä ainesosa
+     * @param maara Määrä liukulukuna
+     */
     public void lisaaAinesosa(Ainesosa ainesosa, double maara) {
         this.ainesosat.put(ainesosa, maara);
     }
     
+    /**
+     * Metodi lisää sille annetun hajautustaulun aineosat ja määrät yksi kerrallaan
+     * reseptin ainesosiin
+     * 
+     * @param ainesosat Lisättävien ainesosien hajautustaulu
+     */
     public void lisaaUseaAinesosa(Map<Ainesosa, Double> ainesosat) {
         for (Ainesosa ainesosa : ainesosat.keySet()) {
-            this.ainesosat.put(ainesosa, ainesosat.get(ainesosa));
+            lisaaAinesosa(ainesosa, ainesosat.get(ainesosa));
         }
     }
     

@@ -28,7 +28,9 @@ public class Baarikaappi {
     }
     
     public double getAinesosanMaaraBaarikaapissa(Ainesosa a) {
-        
+        if (this.ainesosat.containsKey(a)) {
+            return this.ainesosat.get(a);
+        }
         return 0.0;
     }
     

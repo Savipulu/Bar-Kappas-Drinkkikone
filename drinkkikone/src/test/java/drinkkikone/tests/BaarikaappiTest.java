@@ -55,9 +55,15 @@ public class BaarikaappiTest {
     }
     
     @Test
-    public void AinesosanLisaysOnnistuu() {
+    public void ainesosanLisaysOnnistuu() {
         this.baarikaappi.lisaaAinesosa(ainesosa1, 100.0);
         assertEquals(1, this.baarikaappi.getBaarikaapinAinesosienNimet().size());
+    }
+    
+    @Test
+    public void ainesosanLisaysAsettaaMaaranOikein() {
+        this.baarikaappi.lisaaAinesosa(ainesosa1, 100.0);
+        assertEquals(100.0, this.baarikaappi.getAinesosanMaaraBaarikaapissa(ainesosa1), 0.001);
     }
     
     @Test

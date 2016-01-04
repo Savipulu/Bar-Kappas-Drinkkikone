@@ -69,18 +69,30 @@ public class Drinkkikone {
      * valmistamiseen tarvittavia ainesosia tarpeeksi
      * 
      * @param r Tarkistettava resepti
-     * @return Totuusarvo siitä onko drinkki mahdollinen
+     * 
+     * @return Totuusarvo siitä onko drinkki mahdollista valmistaa
      */
     public boolean aineksetLoytyy(Resepti r) {
-        if (this.baarikaappi.getBaarikaapinAinesosienNimet().size() == 0) {
+        if (baarikaappi.onTyhja()) {
             return false;
         }
         
         for (Ainesosa ainesosa : r.getAinesosat()) {
-            if (r.getAinesosatJaMaarat().get(ainesosa) < this.baarikaappi.getAinesosanMaaraBaarikaapissa(ainesosa)) {
+            if (baarikaappi.getAinesosanMaaraBaarikaapissa(ainesosa) < r.getAinesosatJaMaarat().get(ainesosa)) {
                 return false;
             }
         }
         return true;
+    }
+    
+    public String naytaValmistettavatDrinkit() {
+        String drinkit = "";
+        for (Resepti resepti : reseptikirja.getKaikkiReseptit()) {
+            if (aineksetLoytyy(resepti)) {
+                drinkit += resepti.toString();
+                drinkit += "\n";
+            }
+        }
+        return drinkit;
     }
 }

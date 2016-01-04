@@ -87,12 +87,18 @@ public class DrinkkikoneTest {
     
     @Test
     public void aineksetLoytyyFalseJosAineksiaEiOleTarpeeksi() {
-        
+        drinkkikone.lisaaResepti(resepti1);
+        for (Ainesosa ainesosa : ainesosatMap.keySet()) {
+            baarikaappi.lisaaAinesosa(ainesosa, 1.0);
+        }
+        assertEquals(false, drinkkikone.aineksetLoytyy(resepti1));
     }
     
     @Test
     public void aineksetLoytyyTrueJosAineksetLoytyy() {
-        
+        drinkkikone.lisaaResepti(resepti1);
+        baarikaappi.lisaaUseaAinesosa(ainesosatMap);
+        assertEquals(true, drinkkikone.aineksetLoytyy(resepti1));
     }
     
     @Test
@@ -105,5 +111,21 @@ public class DrinkkikoneTest {
         drinkkikone.lisaaResepti(resepti1);
         this.baarikaappi.lisaaUseaAinesosa(ainesosatMap);
         assertNotEquals(null, this.drinkkikone.satunnainenDrinkki());
+    }
+    
+    @Test
+    public void naytaValmistettavatDrinkitPalauttaaMahdollisetReseptit() {
+        Ainesosa gin = new Ainesosa("Gin", 40.0);
+        Ainesosa tonic = new Ainesosa("Tonic -vesi", 0.0);
+        
+        Resepti resepti2 = new Resepti("Gin & Tonic");
+        resepti2.lisaaAinesosa(gin, 4.0);
+        resepti2.lisaaAinesosa(tonic, 12.0);
+        
+        drinkkikone.lisaaResepti(resepti1);
+        drinkkikone.lisaaResepti(resepti2);
+        baarikaappi.lisaaUseaAinesosa(ainesosatMap);
+        
+        assertEquals(resepti1.toString() + "\n", drinkkikone.naytaValmistettavatDrinkit());
     }
 }

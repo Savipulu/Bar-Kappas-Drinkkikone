@@ -12,7 +12,10 @@ public class Kayttoliittyma {
         this.drinkkikone = drinkkikone;
         this.lukija = lukija;
     }
-
+    
+    /**
+     * Metodi käynnistää drinkkikoneen
+     */
     public void suorita() {
         System.out.println("*** Bar Kappa's drinkkikone! ***");
         while (true) {
@@ -20,7 +23,7 @@ public class Kayttoliittyma {
             System.out.print("Komento: ");
             String komento = lukija.nextLine();
             if (komento.equals("1")) {
-                //drinkkikone.naytaValmistettavatDrinkit();
+                System.out.println(drinkkikone.naytaValmistettavatDrinkit());
             } else if (komento.equals("2")) {
                 System.out.println(drinkkikone.satunnainenDrinkki());
             } else if (komento.equals("3")) {
@@ -33,6 +36,9 @@ public class Kayttoliittyma {
         }
     }
 
+    /**
+     * Metodi tulostaa drinkkikoneessa käytettävät komennot
+     */
     public void tulostaOhjeet() {
         System.out.println("Valitse toiminto: ");
         System.out.println("1 -- Näytä valmistettavissa olevat drinkit");
