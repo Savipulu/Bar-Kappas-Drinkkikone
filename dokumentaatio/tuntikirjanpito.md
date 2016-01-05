@@ -18,3 +18,6 @@ Perjantai 1.1.2016:
 
 Lauantai 2.1.2016:
 30 min pit raportin luominen + pikkusäätöjä
+
+Tiistai 5.1.2016:
+1 h Testidatan lisääminen mainiin demotilaisuutta varten
