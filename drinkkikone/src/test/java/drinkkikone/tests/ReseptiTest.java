@@ -72,6 +72,6 @@ public class ReseptiTest {
     @Test
     public void toStringToimiiOikein() {
         resepti.lisaaUseaAinesosa(ainesosat);
-        assertEquals("Gin & Tonic: \n  Gin: 1.0 cl, \n  Vermutti: 6.0 cl", resepti.toString());
+        assertEquals("Gin & Tonic: \n  Gin: 1.0 cl,\n  Vermutti: 6.0 cl\n\n  Valmistusohje: null", resepti.toString());
     }
 }

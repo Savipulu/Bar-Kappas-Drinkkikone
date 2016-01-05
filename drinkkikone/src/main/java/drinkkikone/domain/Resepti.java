@@ -75,10 +75,12 @@ public class Resepti {
         for (Ainesosa ainesosa : ainekset) {
             resepti += "  " + ainesosa.toString() + ": " + this.ainesosat.get(ainesosa) + " cl";
             if (i != (this.ainesosat.keySet().size() - 1)) {
-                resepti += ", \n";
+                resepti += ",";
             }
+            resepti += "\n";
             i++;
         }
+        resepti += "\n  Valmistusohje: " + this.getValmistusohje();
         
         return resepti;
     }

@@ -37,13 +37,16 @@ public class Main {
         Resepti resepti1 = new Resepti("Martini");
         resepti1.lisaaAinesosa(gin, 6.0);
         resepti1.lisaaAinesosa(vermutti, 1.0);
+        resepti1.setValmistusohje("Laita ravistimeen jäitä, lisää ainekset ja hämmennä.");
         
         Resepti resepti2 = new Resepti("Gin & Tonic");
         resepti2.lisaaAinesosa(gin, 4.0);
         resepti2.lisaaAinesosa(tonic, 12.0);
+        resepti2.setValmistusohje("Täytä lasi puolilleen jäitä, lisää gini ja pidennä tonic-vedellä.");
         
         Resepti resepti3 = new Resepti("Rommikola");
         resepti3.lisaaUseaAinesosa(rommikolanAinesosat);
+        resepti3.setValmistusohje("Täytä highball-lasi jääpaloilla. Kaada lasiin ensin rommi ja sitten cola. Sekoita baarilusikalla.");
         
         Drinkkikone drinkkikone = new Drinkkikone(baarikaappi, reseptikirja);
         drinkkikone.lisaaResepti(resepti1);
