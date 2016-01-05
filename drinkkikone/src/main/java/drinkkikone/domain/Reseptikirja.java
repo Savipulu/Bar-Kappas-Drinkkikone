@@ -26,7 +26,7 @@ public class Reseptikirja {
         this.reseptit.add(r);
     }
     
-    public String kaikkiReseptit() {
+    public String kaikkiReseptitMerkkijonona() {
         String kaikki = "";
         for (Resepti resepti : reseptit) {
             kaikki += resepti.toString() + "\n";

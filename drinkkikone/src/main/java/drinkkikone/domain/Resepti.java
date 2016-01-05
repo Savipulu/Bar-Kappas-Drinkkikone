@@ -18,6 +18,7 @@ public class Resepti {
     public Resepti(String nimi) {
         this.nimi = nimi;
         this.ainesosat = new HashMap<>();
+        this.valmistusohje = "";
     }
     
     public Resepti(String nimi, Map<Ainesosa, Double> ainesosat) {

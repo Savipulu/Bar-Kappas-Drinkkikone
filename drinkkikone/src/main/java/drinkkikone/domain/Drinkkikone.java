@@ -41,7 +41,7 @@ public class Drinkkikone {
      * @return Drinkkikoneen reseptien nimet
      */
     public String kaikkiReseptit() {
-        return this.reseptikirja.kaikkiReseptit();
+        return this.reseptikirja.kaikkiReseptitMerkkijonona();
     }
     
     /**
@@ -52,10 +52,10 @@ public class Drinkkikone {
      */
     public Resepti satunnainenDrinkki() {
         Resepti r = null;
-        if (!this.baarikaappi.onTyhja()) {
+        if (!baarikaappi.onTyhja() && onMahdollisiaDrinkkeja()) {
             while (true) {
-                int i = random.nextInt(this.reseptikirja.getKaikkiReseptit().size());
-                r = this.reseptikirja.getResepti(i);
+                int i = random.nextInt(reseptikirja.getKaikkiReseptit().size());
+                r = reseptikirja.getResepti(i);
                 if (aineksetLoytyy(r)) {
                     break;
                 }
@@ -94,5 +94,14 @@ public class Drinkkikone {
             }
         }
         return drinkit;
+    }
+    
+    public boolean onMahdollisiaDrinkkeja() {
+        for (Resepti resepti : reseptikirja.getKaikkiReseptit()) {
+            if (aineksetLoytyy(resepti)) {
+                return true;
+            }
+        }
+        return false;
     }
 }

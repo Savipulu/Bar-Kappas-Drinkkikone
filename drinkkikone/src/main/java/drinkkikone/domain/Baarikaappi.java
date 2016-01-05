@@ -72,4 +72,5 @@ public class Baarikaappi {
             lisaaAinesosa(ainesosa, ainesosat.get(ainesosa));
         }
     }
+    
 }

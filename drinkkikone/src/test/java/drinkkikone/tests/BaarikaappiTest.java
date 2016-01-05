@@ -84,4 +84,5 @@ public class BaarikaappiTest {
         this.baarikaappi.lisaaAinesosa(ainesosa1, 3.0);
         assertEquals(1, this.baarikaappi.getBaarikaapinAinesosienNimet().size());
     }
+    
 }

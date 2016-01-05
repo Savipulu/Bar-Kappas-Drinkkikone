@@ -109,7 +109,7 @@ public class DrinkkikoneTest {
     @Test
     public void satunnainenDrinkkiMetodiPalauttaaDrinkinJosSeOnMahdollista() {
         drinkkikone.lisaaResepti(resepti1);
-        this.baarikaappi.lisaaUseaAinesosa(ainesosatMap);
+        baarikaappi.lisaaUseaAinesosa(ainesosatMap);
         assertNotEquals(null, this.drinkkikone.satunnainenDrinkki());
     }
     

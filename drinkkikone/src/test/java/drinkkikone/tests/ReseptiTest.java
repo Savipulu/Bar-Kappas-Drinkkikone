@@ -72,6 +72,12 @@ public class ReseptiTest {
     @Test
     public void toStringToimiiOikein() {
         resepti.lisaaUseaAinesosa(ainesosat);
-        assertEquals("Gin & Tonic: \n  Gin: 1.0 cl,\n  Vermutti: 6.0 cl\n\n  Valmistusohje: null", resepti.toString());
+        assertEquals("Gin & Tonic: \n  Gin: 1.0 cl,\n  Vermutti: 6.0 cl\n\n  Valmistusohje: ", resepti.toString());
+    }
+    
+    @Test
+    public void setValmistusohjeAsettaaValmistusohjeen() {
+        resepti.setValmistusohje("Täytä lasi puolilleen jäitä, lisää gini ja pidennä tonic-vedellä.");
+        assertEquals("Täytä lasi puolilleen jäitä, lisää gini ja pidennä tonic-vedellä.", resepti.getValmistusohje());
     }
 }
