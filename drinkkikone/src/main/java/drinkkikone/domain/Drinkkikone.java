@@ -86,11 +86,11 @@ public class Drinkkikone {
     }
     
     public String naytaValmistettavatDrinkit() {
-        String drinkit = "";
+        String drinkit = "---\n";
         for (Resepti resepti : reseptikirja.getKaikkiReseptit()) {
             if (aineksetLoytyy(resepti)) {
                 drinkit += resepti.toString();
-                drinkit += "\n";
+                drinkit += "\n---\n";
             }
         }
         return drinkit;

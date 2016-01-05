@@ -126,6 +126,6 @@ public class DrinkkikoneTest {
         drinkkikone.lisaaResepti(resepti2);
         baarikaappi.lisaaUseaAinesosa(ainesosatMap);
         
-        assertEquals(resepti1.toString() + "\n", drinkkikone.naytaValmistettavatDrinkit());
+        assertEquals("---\n" + resepti1.toString() + "\n---\n", drinkkikone.naytaValmistettavatDrinkit());
     }
 }

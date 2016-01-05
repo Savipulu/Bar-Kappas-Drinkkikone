@@ -3,7 +3,9 @@ package drinkkikone.tests;
 
 import drinkkikone.domain.Ainesosa;
 import drinkkikone.domain.Resepti;
+import java.util.ArrayList;
 import java.util.HashMap;
+import java.util.List;
 import org.junit.After;
 import org.junit.AfterClass;
 import org.junit.Before;
@@ -42,7 +44,11 @@ public class ReseptiTest {
 
     @Test
     public void getAinesosatPalauttaaListan() {
-        
+        List<Ainesosa> testilista = new ArrayList<>();
+        for (Ainesosa ainesosa : resepti.getAinesosatJaMaarat().keySet()) {
+            testilista.add(ainesosa);
+        }
+        assertEquals(testilista, resepti.getAinesosat());
     }
     
     @Test

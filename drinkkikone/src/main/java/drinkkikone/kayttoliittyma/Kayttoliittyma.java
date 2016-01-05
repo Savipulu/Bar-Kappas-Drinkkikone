@@ -23,10 +23,13 @@ public class Kayttoliittyma {
             System.out.print("Komento: ");
             String komento = lukija.nextLine();
             if (komento.equals("1")) {
+                System.out.println("");
                 System.out.println(drinkkikone.naytaValmistettavatDrinkit());
             } else if (komento.equals("2")) {
+                System.out.println("");
                 System.out.println(drinkkikone.satunnainenDrinkki());
             } else if (komento.equals("3")) {
+                System.out.println("");
                 System.out.println(drinkkikone.kaikkiReseptit());
             } else if (komento.equals("x")) {
                 break;
