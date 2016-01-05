@@ -21,3 +21,4 @@ Lauantai 2.1.2016:
 
 Tiistai 5.1.2016:
 1 h Testidatan lisääminen mainiin demotilaisuutta varten
+2 h Sekvenssikaavioiden luomista ja testien parantelemista
