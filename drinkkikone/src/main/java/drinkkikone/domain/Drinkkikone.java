@@ -36,7 +36,7 @@ public class Drinkkikone {
     }
     
     /**
-     * Metodi palauttaa drinkkijonon sisältämät reseptit merkkijonoesityksenä
+     * Metodi palauttaa drinkkikoneen reseptikirjan reseptien nimet merkkijonoesityksenä
      * 
      * @return Drinkkikoneen reseptien nimet
      */
@@ -85,6 +85,12 @@ public class Drinkkikone {
         return true;
     }
     
+    /**
+     * Metodi näyttää merkkijonona kaikki drinkkireseptit, jotka ovat valmistettavissa
+     * baarikaapin sisältämillä ainesosilla
+     * 
+     * @return Merkkijonoesitys mahdollisista drinkeistä 
+     */
     public String naytaValmistettavatDrinkit() {
         String drinkit = "---\n";
         for (Resepti resepti : reseptikirja.getKaikkiReseptit()) {
@@ -96,6 +102,12 @@ public class Drinkkikone {
         return drinkit;
     }
     
+    /**
+     * Metodi tarkistaa onko baarikaapin sisällöstä mahdollista tehdä reseptikirjassa
+     * tunnettuja reseptejä
+     * 
+     * @return Totuusarvo siitä, onko mahdollisia drinkkejä
+     */
     public boolean onMahdollisiaDrinkkeja() {
         for (Resepti resepti : reseptikirja.getKaikkiReseptit()) {
             if (aineksetLoytyy(resepti)) {

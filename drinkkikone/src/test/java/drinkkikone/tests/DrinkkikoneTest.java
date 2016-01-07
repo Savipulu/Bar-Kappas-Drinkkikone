@@ -128,4 +128,10 @@ public class DrinkkikoneTest {
         
         assertEquals("---\n" + resepti1.toString() + "\n---\n", drinkkikone.naytaValmistettavatDrinkit());
     }
+    
+    @Test
+    public void kaikkiReseptitMerkkkijononaPalauttaaVainReseptienNimet() {
+        reseptikirja.lisaaResepti(resepti1);
+        assertEquals("Reseptit:\n\nCuba Libre\n", drinkkikone.kaikkiReseptit());
+    }
 }

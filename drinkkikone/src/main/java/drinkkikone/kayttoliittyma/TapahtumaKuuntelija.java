@@ -6,6 +6,10 @@ import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.JTextArea;
 
+/**
+ * Drinkkikoneen graafista käyttöliittymää varten tehty ActionListener
+ * 
+ */
 public class TapahtumaKuuntelija implements ActionListener {
     
     private Drinkkikone drinkkikone;

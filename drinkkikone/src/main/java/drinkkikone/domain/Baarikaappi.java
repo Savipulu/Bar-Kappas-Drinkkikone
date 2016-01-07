@@ -21,12 +21,23 @@ public class Baarikaappi {
         return this.ainesosat;
     }
     
+    /**
+     * Metodi palauttaa listan baarikaapin ainesosien nimistä
+     * 
+     * @return Baarikaapin ainesosien nimet 
+     */
     public List<Ainesosa> getBaarikaapinAinesosienNimet() {
         ArrayList<Ainesosa> ainekset = new ArrayList();
         ainekset.addAll(this.ainesosat.keySet());
         return ainekset;
     }
     
+    /**
+     * Metodi palauttaa yksittäisen ainesosan määrän baarikaapissa
+     * 
+     * @param a Haettava ainesosa
+     * @return Ainesosan määrä baarikaapissa
+     */
     public double getAinesosanMaaraBaarikaapissa(Ainesosa a) {
         if (this.ainesosat.containsKey(a)) {
             return this.ainesosat.get(a);

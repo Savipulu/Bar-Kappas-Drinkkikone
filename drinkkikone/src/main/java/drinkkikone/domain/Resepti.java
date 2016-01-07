@@ -38,6 +38,11 @@ public class Resepti {
         return this.valmistusohje;
     }
     
+    /**
+     * Metodi tekee listan reseptiin liitetyistä ainesosista ja palauttaa sen
+     * 
+     * @return Lista ainesosista
+     */
     public List<Ainesosa> getAinesosat() {
         ArrayList<Ainesosa> ainesosat = new ArrayList<>();
         ainesosat.addAll(this.ainesosat.keySet());

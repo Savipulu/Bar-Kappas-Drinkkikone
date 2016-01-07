@@ -12,6 +12,10 @@ import javax.swing.JPanel;
 import javax.swing.JTextArea;
 import javax.swing.WindowConstants;
 
+/**
+ * GraafinenKayttoliittyma -luokka on vaihtoehtoinen käyttöliittymä drinkkikoneelle
+ * 
+ */
 public class GraafinenKayttoliittyma implements Runnable{
     private Drinkkikone drinkkikone;
     private JFrame frame;

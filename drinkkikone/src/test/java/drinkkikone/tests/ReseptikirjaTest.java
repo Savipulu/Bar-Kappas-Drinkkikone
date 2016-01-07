@@ -79,4 +79,10 @@ public class ReseptikirjaTest {
         reseptikirja.lisaaResepti(resepti2);
         assertEquals(resepti1.toString() + "\n" + resepti2.toString() + "\n", reseptikirja.toString());
     }
+    
+    @Test
+    public void kaikkiReseptitMerkkijononaPalauttaaVainReseptienNimet() {
+        reseptikirja.lisaaResepti(resepti1);
+        assertEquals("Reseptit:\n\nRommikola\n", reseptikirja.kaikkiReseptitMerkkijonona());
+    }
 }

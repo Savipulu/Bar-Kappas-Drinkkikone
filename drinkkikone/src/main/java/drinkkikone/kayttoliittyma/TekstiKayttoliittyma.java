@@ -3,6 +3,10 @@ package drinkkikone.kayttoliittyma;
 import drinkkikone.domain.Drinkkikone;
 import java.util.Scanner;
 
+/**
+ * Drinkkikoneen ensisijainen käyttöliittymäluokka
+ * 
+ */
 public class TekstiKayttoliittyma {
 
     private Drinkkikone drinkkikone;
