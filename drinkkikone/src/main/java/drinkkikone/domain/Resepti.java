@@ -26,6 +26,10 @@ public class Resepti {
         lisaaUseaAinesosa(ainesosat);
     }
     
+    public String getNimi() {
+        return this.nimi;
+    }
+    
     public void setValmistusohje(String valmistusohje) {
         this.valmistusohje = valmistusohje;
     }
@@ -68,7 +72,7 @@ public class Resepti {
     }
     
     public String toString() {
-        String resepti = this.nimi + ": \n";
+        String resepti = this.nimi + ":\n";
         int i = 0;
         List<Ainesosa> ainekset = getAinesosat();
         ainekset.sort(null);
@@ -81,7 +85,7 @@ public class Resepti {
             resepti += "\n";
             i++;
         }
-        resepti += "\n  Valmistusohje: " + this.getValmistusohje();
+        resepti += "\n  Valmistusohje: " + this.getValmistusohje() + "\n";
         
         return resepti;
     }

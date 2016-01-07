@@ -77,7 +77,7 @@ public class DrinkkikoneTest {
     @Test
     public void reseptienTulostaminenToimii() {
         drinkkikone.lisaaResepti(resepti1);
-        assertEquals(resepti1.toString(), reseptikirja.toString());
+        assertEquals(resepti1.toString() + "\n", reseptikirja.toString());
     }
     
     @Test

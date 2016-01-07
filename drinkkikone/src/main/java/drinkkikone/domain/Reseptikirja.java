@@ -22,22 +22,33 @@ public class Reseptikirja {
         return this.reseptit.get(i);
     } 
     
+    /**
+     * Metodi lisaa uuden reseptin reseptikirjaan
+     * 
+     * @param r lisättävä resepti
+     */
     public void lisaaResepti(Resepti r) {
         this.reseptit.add(r);
     }
     
+    /**
+     * Metodi palauttaa reseptien nimet yhtenä merkkijonona
+     * 
+     * @return kaikki  
+     */
     public String kaikkiReseptitMerkkijonona() {
-        String kaikki = "";
+        String kaikki = "Reseptit:\n\n";
         for (Resepti resepti : reseptit) {
-            kaikki += resepti.toString() + "\n";
+            kaikki += resepti.getNimi() + "\n";
         }
         return kaikki;
     }
     
+    @Override
     public String toString() {
         String toString = "";
         for (Resepti resepti : reseptit) {
-            toString += resepti.toString();
+            toString += resepti.toString() + "\n";
         }
         return toString;
     }

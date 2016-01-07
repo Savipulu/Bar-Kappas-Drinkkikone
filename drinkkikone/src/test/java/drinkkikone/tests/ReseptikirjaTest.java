@@ -70,13 +70,13 @@ public class ReseptikirjaTest {
     @Test
     public void reseptienTulostaminenToimii() {
         reseptikirja.lisaaResepti(resepti1);
-        assertEquals(resepti1.toString(), reseptikirja.toString());
+        assertEquals(resepti1.toString() + "\n", reseptikirja.toString());
     }
     
     @Test
-    public void kaikkienReseptienTulostaminenToimii() {
+    public void reseptikirjanToStringToimii() {
         reseptikirja.lisaaResepti(resepti1);
         reseptikirja.lisaaResepti(resepti2);
-        assertEquals(resepti1.toString() + "\n" + resepti2.toString() + "\n", reseptikirja.kaikkiReseptitMerkkijonona());
+        assertEquals(resepti1.toString() + "\n" + resepti2.toString() + "\n", reseptikirja.toString());
     }
 }

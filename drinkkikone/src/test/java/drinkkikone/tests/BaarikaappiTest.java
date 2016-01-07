@@ -85,4 +85,9 @@ public class BaarikaappiTest {
         assertEquals(1, this.baarikaappi.getBaarikaapinAinesosienNimet().size());
     }
     
+    @Test
+    public void baarikaapinAinesosienTulostusOnnistuu() {
+        this.baarikaappi.lisaaAinesosa(ainesosa1, 2.0);
+        assertEquals("Baarikaapin sisältö:\n\n  Tequila, 2.0cl\n", this.baarikaappi.tulostaAinesosatMerkkijonona());
+    }
 }

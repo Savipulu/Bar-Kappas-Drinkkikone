@@ -56,5 +56,6 @@ public class Main {
         Kayttoliittyma kayttoliittyma = new Kayttoliittyma(drinkkikone, lukija);
         
         kayttoliittyma.suorita();
+        kayttoliittyma.run();
     }
 }

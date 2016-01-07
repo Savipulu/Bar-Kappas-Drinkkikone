@@ -73,4 +73,19 @@ public class Baarikaappi {
         }
     }
     
+    /**
+     * Metodi tulostaa baarikaapin sisällön merkkijonona
+     * 
+     * @return sisalto Baarikaapin sisältö yhtenä merkkijonona
+     */
+    public String tulostaAinesosatMerkkijonona() {
+        String sisalto = "Baarikaapin sisältö:\n\n";
+        
+        for (Ainesosa ainesosa : ainesosat.keySet()) {
+            sisalto += "  " + ainesosa.getNimi();
+            sisalto += ", " + ainesosat.get(ainesosa) + "cl\n";
+        }
+        
+        return sisalto;
+    }
 }
