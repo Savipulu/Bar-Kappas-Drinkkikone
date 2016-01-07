@@ -22,3 +22,6 @@ Lauantai 2.1.2016:
 Tiistai 5.1.2016:
 1 h Testidatan lisääminen mainiin demotilaisuutta varten
 2 h Sekvenssikaavioiden luomista ja testien parantelemista
+
+Torstai 7.1.2016:
+3 h Graafisen käyttöliittymän tekeminen ja testauksen lisääminen
