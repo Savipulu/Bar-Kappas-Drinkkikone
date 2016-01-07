@@ -6,7 +6,8 @@ import drinkkikone.domain.Baarikaappi;
 import drinkkikone.domain.Drinkkikone;
 import drinkkikone.domain.Resepti;
 import drinkkikone.domain.Reseptikirja;
-import drinkkikone.kayttoliittyma.Kayttoliittyma;
+import drinkkikone.kayttoliittyma.GraafinenKayttoliittyma;
+import drinkkikone.kayttoliittyma.TekstiKayttoliittyma;
 import java.util.HashMap;
 import java.util.Scanner;
 
@@ -53,9 +54,10 @@ public class Main {
         drinkkikone.lisaaResepti(resepti2);
         drinkkikone.lisaaResepti(resepti3);
         
-        Kayttoliittyma kayttoliittyma = new Kayttoliittyma(drinkkikone, lukija);
+        TekstiKayttoliittyma tKayttoliittyma = new TekstiKayttoliittyma(drinkkikone, lukija);
+        GraafinenKayttoliittyma gKayttoliittyma = new GraafinenKayttoliittyma(drinkkikone);
         
-        kayttoliittyma.suorita();
-        kayttoliittyma.run();
+        tKayttoliittyma.suorita();
+        gKayttoliittyma.run();
     }
 }
