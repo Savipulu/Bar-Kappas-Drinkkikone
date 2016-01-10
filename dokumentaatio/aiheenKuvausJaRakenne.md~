@@ -6,13 +6,6 @@ Drinkkikone on ohjelma, jolle annetaan drinkkien reseptejä ja niiden ainesosia.
 **Käyttäjät:**
 Drinkkikoneen käyttäjät ovat baarikaapin sisältöä tarkastelevia juojia. Drinkkikone on tarkoitettu käytettäväksi vain juojan näkökulmasta, ja sitä ei ole tarkoitus ylläpitää. Ohjelma ei siis sisällä esim. käyttäjää "ylläpitäjä", eikä sinne voi ohjelman suorittamisen aikana lisätä drinkkejä, reseptejä tai ainesosia. Drinkkikoneen tarkoituksena on vain passiivisesti vastaanottaa tiedot jonkun tietyn baarikaapin ja reseptikirjan sisällöistä ohjelman käynnistyessä, ja näyttää juojalle mitä drinkkejä baarikaapin ainesosista saa aikaan reseptikirjan reseptien perusteella.
 
-**Rakenne:**
-Drinkkikoneen toiminta perustuu Drinkkikone -luokkaan, joka käyttää toiminnassaan Reseptikirja -luokkaa sekä Baarikaappi-luokkaa. Baarikaappi tallettaa sisältämänsä ainesosat Hashmappiin, joka sisältää Ainesosa -luokan avaimelle Double tyyppisen muuttujan. Reseptikirja ja taas tallettaa Resepti -luokan ilmentymiä listarakenteeseen, ja Resepti -luokan oliot tallettavat valmistusohjeen merkkijonoesityksen lisäksi reseptin ainesosat vastaavanlaiseen hajautustauluun kuin baarikaappikin. 
-
-Reseptikirja, Resepti ja Baarikaappi -luokat vastaavat pohjimmiltaan Ainesosa -luokan olioiden järkevästä varastoinnista ohjelman toimintaa varten, ja tarjoavat lähinnä hyödyllisiä apumetodeja drinkkikonetta. Ohjelman logiikka löytyy Drinkkikone -luokasta. Kaikki edellämainitut luokat löytyvät ohjelmassa pakkauksesta drinkkikone.domain.
-
-Ohjelman käyttöliittymät sijaitsevat pakkauksessa drinkkikone.kayttolittyma. Drinkkikoneella on sekä tekstikäyttöliittymä että alkeellinen graafinen käyttöliittymä. 
-
 ##Juojan toiminnot:
 
 **Mahdollisten drinkkien näyttäminen**
