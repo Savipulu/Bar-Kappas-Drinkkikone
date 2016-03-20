@@ -80,7 +80,6 @@ public class Resepti {
         String resepti = this.nimi + ":\n";
         int i = 0;
         List<Ainesosa> ainekset = getAinesosat();
-        ainekset.sort(null);
         
         for (Ainesosa ainesosa : ainekset) {
             resepti += "  " + ainesosa.toString() + ": " + this.ainesosat.get(ainesosa) + " cl";

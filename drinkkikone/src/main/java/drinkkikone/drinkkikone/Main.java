@@ -8,13 +8,38 @@ import drinkkikone.domain.Resepti;
 import drinkkikone.domain.Reseptikirja;
 import drinkkikone.kayttoliittyma.GraafinenKayttoliittyma;
 import drinkkikone.kayttoliittyma.TekstiKayttoliittyma;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.HashMap;
 import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
-        //Perjantain demoa varten Mainiin lisätty pientä testidataa
+    public static void main(String[] args) throws Exception {
+        //Ladataan käyttöön ajuri
+        Class.forName("org.postgresql.Driver");
+        //Luodaan yhteys postgreSQL -tietokantaan
+        Connection connection = DriverManager.getConnection("jdbc:postgresql:tietokanta.db  ");
+        
+        // luodaan olio, jonka avulla voidaan tehdä kyselyitä tietokantaan
+        Statement statement = connection.createStatement();
+        // tehdään tietokantaan SQL-kysely "SELECT * FROM Drinkki", jolla haetaan
+        // kaikki tiedot Drinkki-taulusta -- tuloksena resultSet-olio
+        ResultSet resultSet = statement.executeQuery("SELECT * FROM Drinkki");
+
+        // käydään tuloksena saadussa oliossa olevat rivit läpi -- next-komento hakee
+        // aina seuraavan rivin, ja palauttaa true jos rivi löytyi
+        while(resultSet.next()) {
+            System.out.println(resultSet.next());
+        }
+
+        // suljetaan lopulta yhteys tietokantaan
+        connection.close();
+    }
+    
+    public static void testisuoritus() {
         Baarikaappi baarikaappi = new Baarikaappi();
         Reseptikirja reseptikirja = new Reseptikirja();
         Scanner lukija = new Scanner(System.in);
